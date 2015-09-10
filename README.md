@@ -4,6 +4,9 @@
 >表结构语法审核
 ## 环境配置
 >python2.7 + flask
+>
+>先安装3个模块
+> pip install flask_wtf    pip install flask-script    pip install flask-debugtoolbar
 ## 使用方法
 >先将app目录中的inception.py文件里的账号密码改成自己的
 >
