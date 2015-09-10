@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Inception表结构评审系统{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs">        
+    <script type="text/javascript">
+try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+    </script>
+
+    <ul class="breadcrumb">
+        <li>
+        <i class="icon-home home-icon"></i>
+        <a href="/">Home</a>
+        </li>
+
+        <li>
+        <a href="/ldapconfig">运维工具</a>
+        </li>
+        <li class="active">Inception表结构评审系统</li>
+    </ul><!-- .breadcrumb -->
+
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+
+<div class="page-content">
+<div class="page-header">
+    <h1>Inception表结构评审系统<small></h1>
+</div>
+
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="panel panel-primary">
+            <div class="panel-heading">请输入需要评审的MySQL数据库表结构</div>
+            <div class="panel-body">
+<form class="form-horizontal" role="form" action="inception_table_structure" method='post'>
+    <div class="form-group">
+      <div class="col-sm-9">
+          <textarea id="form-field-2" placeholder="table structure" class="col-xs-10 col-sm-12" name="mysql_structure" rows="15">{{abc}}</textarea>
+      </div>
+    </div>
+
+    <div class="space-4"></div>
+    <div class="clearfix form-actions">
+    <div class="col-md-offset-0 col-md-5">
+        <button class="btn btn-info" type="submit">
+            <i class="icon-ok bigger-110"></i>
+            Submit
+        </button>
+        &nbsp; &nbsp; &nbsp;
+        <button class="btn" type="reset">
+            <i class="icon-undo bigger-110"></i>
+            Reset
+        </button>
+    </div>
+    </div>
+
+<div class="hr hr-24"></div>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+
+
+{% if sql_review != {} %}
+<div class="col-md-9">
+<div class="panel-footer">
+    <table class="table">
+        {% for line in sql_review %}
+        <tr>
+            <th>{{line}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+{% endif %}
+
+
+{% if pagination %}
+<tr>
+    <div class="dataTables_paginate paging_bootstrap">
+    <div class="panel-footer"></div>
+        {{ macros.pagination_widget(pagination, '.servers') }}</div>
+</tr>
+{% endif %}
+</div>
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                       </div>                                                                                                                                                                         </div>
+
+
+{% endblock %}
