@@ -13,7 +13,7 @@
 >
 > pip install flask-debugtoolbar
 >
-> pip install MySQLdb
+> pip install MySQL-python
 ## 使用方法
 >先将app目录中的inception.py文件里的账号密码改成自己的
 >
