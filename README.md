@@ -17,6 +17,8 @@
 ## 使用方法
 >先将app目录中的inception.py文件里的账号密码改成自己的
 >
+>记得use sql_check这里要改成自己的数据库名字
+>
 >在inception_web目录下运行./run.py runserver --host 0.0.0.0
 >
 >使用浏览器访问你的IP  http://192.168.xx.xxx:5000/
